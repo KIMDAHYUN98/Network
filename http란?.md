@@ -1,4 +1,3 @@
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/757d4617-8577-428d-95b6-cb4d841d3efc/Untitled.png)
 
 A하고 B가 있다고 가정해보자.
 
@@ -42,8 +41,6 @@ http 통신에는 약속이 필요한데, http 1.1 기준에서는 수많은 약
 
 - 데이터를 삭제해줘! (**Delete**)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c418bbe4-2ddc-44b3-8b10-781f15d449f7/Untitled.png)
-
 ✨✨여기서 중요✨✨
 
 클라이언트에서 서버로 어떤 정보를 요청 할 때 ***무슨 정보를 요청하는 것인지 어떻게 아는 것인가?***
@@ -56,7 +53,6 @@ http 통신에는 약속이 필요한데, http 1.1 기준에서는 수많은 약
 
 ---
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9d5b75f-7fb8-45aa-849a-5076efdd18fa/Untitled.png)
 
 ### 포트란 무엇인가?
 
@@ -77,8 +73,6 @@ http 통신에는 약속이 필요한데, http 1.1 기준에서는 수많은 약
 - 그러면 네이버는 서비스 운영을 못하게 될 것이다. 1초에 1명씩 처리 한다면 100번째 이용자는 100초 후에 처리가 될 것이다.
 - 이러한 불편함을 소켓이 해소해 준다. 처리할 수 있는 곳이 한 곳이 아닌 여러개를 지정해서 동시에 여러 작업들을 처리해 주는 것
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9bb08209-c9cf-4a53-aede-d94fdac390b8/Untitled.png)
-
 A와 B는 포트로 인해 통신이 된 상태이다.
 
 만약 B가 C와 D라는 사람과 통신하고 싶을 때, C, D에 포트를 달아서 B와 연결하게 된다.
@@ -91,8 +85,6 @@ A와 B는 포트로 인해 통신이 된 상태이다.
 
 > 요청한 후 선을 계속 유지하는 방식
 > 
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3800e8de-1d34-4776-87ff-53fdcf4cd572/Untitled.png)
 
 - 이러한 과정에서 A와 B사이에 **Session**이 생성되었다!
 - 섹션이 생성되었다는 것은 **데이터를 응답할 준비가 되었다는 것!(인증)** ⇒ 근거로 인해 인증이 되었기 때문에 A와 B는 데이터를 마구 주고 받을 수 있다.
@@ -110,15 +102,11 @@ A와 B는 포트로 인해 통신이 된 상태이다.
 
 A가 B에게 get 방식으로 요청을 한 뒤, B는 A에게 그에 맞는 응답을 할 것이다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e8c2347-2486-47a4-8d1b-593ab6314e55/Untitled.png)
-
 ***그 후에는 연결을 끊어버린다!***
 
 그러므로 http 는 한번 인증을 하고 난 뒤, 연결을 끊기 때문에 동일한 클라이언트가 새로 요청을 했음에도 불구하고 서버입장에서는 보장이 안된다. 
 
 🤔 이러한 경우에는 어떤식으로 인증이 진행되는가? 
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d4f0d94d-7edf-4bce-9e7d-76410cf109ac/Untitled.png)
 
 ## HTTP의 구조
 
@@ -136,11 +124,7 @@ A가 B에게 get 방식으로 요청을 한 뒤, B는 A에게 그에 맞는 응�
 > 
 - ex, 전화 시스템 → 속도와 성능이 일정
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/836b6485-7fc2-40ef-b223-5e7d3b3241f6/Untitled.png)
-
 가, 나, 다, 라 라는 데이터가 있는데 이 데이터들을 한번에 실어서 전송한다.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9acb6063-7496-463f-a3c8-75b2669c0035/Untitled.png)
 
 단점은 선이 추가적으로 생성되는 것이 서킷 스위치 방식인데, 속도가 빠른 반면에 물리적으로 선이 계속 연결되어야 하기 때문에 비용이 상승한다.
 
@@ -150,13 +134,9 @@ A가 B에게 get 방식으로 요청을 한 뒤, B는 A에게 그에 맞는 응�
 > 
 - ex, IP
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/70d79253-c50a-42c9-b224-d0508f9b9535/Untitled.png)
-
 가, 나, 다, 라 같은 다수의 데이터를 보낼 때 각각 쪼개는데 한 조각을 패킷이라고 한다.
 
 또한 C가 B에게 데이터를 전송 할 때, 선이 새로 생성 되는 것이 아니라 A의 선과 공유하는 형태로 전송된다.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66da013f-6770-4073-bd2f-6a5d2cba0f83/Untitled.png)
 
 🤔이러한 경우 A의 데이터와 C의 데이터가 섞이게 되는데 B는 어떤식으로 데이터들을 구분할까?
 
@@ -164,11 +144,8 @@ A가 B에게 get 방식으로 요청을 한 뒤, B는 A에게 그에 맞는 응�
 
 경로가 다양하고, 교통의 혼잡이 가장 적은 경로를 선택해 데이터가 전송하게 된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bce19e09-593d-440a-ac85-5c7effb140f3/Untitled.png)
-
 만약 A의 가와 라 데이터가 전송 될 때, 실제로 경로가 다를 수 있다. 전송 순서에 따르면 A가 먼저 전송됐는데 라가 먼저 도착한 경우 서버가 조립시에 문제가 발생한다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e9cc6442-e732-4c27-8ba4-5fc340addf7d/Untitled.png)
 
 그러므로 **모든 패킷에는 헤더가 붙어서(데이터 순서, 출처 등) 함께 전송**된다.
 
